@@ -32,11 +32,10 @@ Given your actual key string, how many squares are used?
 Your puzzle input is `wenycdww`.
 """
   def used_squares(input) do
-    inputs = Enum.map(0..127, fn i -> "#{input}-#{i}" end)
-    hashes = Enum.map(inputs, &AdventOfCode2017.Day10KnotHash.knot_hash/1)
-    bits = Enum.map(hashes, &AdventOfCode2017.Day11DiskDefragmentation.hex_to_bits/1)
-
-    bits
+    0..127
+    |> Enum.map(fn i -> "#{input}-#{i}" end)
+    |> Enum.map(&AdventOfCode2017.Day10KnotHash.knot_hash/1)
+    |> Enum.map(&AdventOfCode2017.Day11DiskDefragmentation.hex_to_bits/1)
     |> Enum.map(fn bits ->
       bits
       |> String.codepoints
