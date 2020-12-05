@@ -1,4 +1,4 @@
-defmodule AdventOfCode2017.Day11DiskDefragmentation do
+defmodule AdventOfCode2017.Day14DiskDefragmentation do
   @moduledoc """
 --- Day 14: Disk Defragmentation ---
 
@@ -35,7 +35,7 @@ Your puzzle input is `wenycdww`.
     0..127
     |> Enum.map(fn i -> "#{input}-#{i}" end)
     |> Enum.map(&AdventOfCode2017.Day10KnotHash.knot_hash/1)
-    |> Enum.map(&AdventOfCode2017.Day11DiskDefragmentation.hex_to_bits/1)
+    |> Enum.map(&AdventOfCode2017.Day14DiskDefragmentation.hex_to_bits/1)
     |> Enum.map(fn bits ->
       bits
       |> String.codepoints
